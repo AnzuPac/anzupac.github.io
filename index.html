@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Даниил — AI Engineer</title>
+<style>
+:root{--bg:#100b1c;--card:#191228;--line:#2c2142;--ink:#ece7f7;--mist:#a99fc4;--brand:#8b5cf6;--hot:#f472b6}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(1200px 600px at 20% -10%,#2a1a4d 0%,var(--bg) 55%);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+header{padding:80px 0 48px}
+h1{font-size:44px;line-height:1.1;margin:0 0 10px;letter-spacing:-.5px}
+.role{color:var(--hot);font-weight:600;letter-spacing:.4px;text-transform:uppercase;font-size:13px}
+.lead{color:var(--mist);max-width:720px;font-size:18px;margin:18px 0 26px}
+.contacts{display:flex;flex-wrap:wrap;gap:10px}
+.contacts a,.chip{border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--ink);text-decoration:none;font-size:14px;background:rgba(255,255,255,.03)}
+.contacts a:hover{border-color:var(--brand);color:#fff}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:1.6px;color:var(--mist);margin:56px 0 18px;font-weight:700}
+.project{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:18px;padding:26px;margin-bottom:22px}
+.project h3{margin:0 0 6px;font-size:22px}
+.meta{color:var(--mist);font-size:13px;margin-bottom:14px}
+.project p{color:#cfc7e3;margin:0 0 12px}
+.project ul{margin:0 0 16px 18px;padding:0;color:#cfc7e3}
+.project li{margin:5px 0}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:16px}
+.shots img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.tag{font-size:12px;color:var(--mist);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.box b{display:block;margin-bottom:8px;color:#fff}
+.box span{color:var(--mist);font-size:14px}
+footer{margin:60px 0 40px;color:var(--mist);font-size:13px;border-top:1px solid var(--line);padding-top:20px}
+b.hl{color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="role">AI Engineer</div>
+  <h1>Даниил</h1>
+  <p class="lead">Строю прикладные ИИ-продукты: локальные LLM-агенты, ИИ-перевод книг с глоссарием и кэшем, автоматизацию через API. Закрываю и бэкенд — Rust/Node.js, PostgreSQL, Docker. Довожу до состояния «работает и проверено»: автотесты, нагрузочные прогоны, бэкапы.</p>
+  <div class="contacts">
+    <a href="mailto:pacanzu@gmail.com">pacanzu@gmail.com</a>
+    <a href="https://t.me/Marquis_Andras">Telegram @Marquis_Andras</a>
+    <span class="chip">Белград · удалённо</span>
+  </div>
+</header>
+
+<h2>Проекты</h2>
+
+<section class="project">
+  <h3>Платформа чтения с ИИ-переводом</h3>
+  <div class="meta">Next.js · TypeScript · Ollama (qwen2.5) · PostgreSQL · Docker · 2026</div>
+  <p>Полный продукт с нуля: каталог, страницы произведений, читалка, подписки, кабинет автора, админ-панель. Главное — <b class="hl">ИИ-перевод глав на локальной модели</b>: промпт-каркас с ролями и правилами, глоссарий терминов, кэш по хэшу.</p>
+  <ul>
+    <li>глава переводится <b class="hl">~6 секунд</b>, повтор — мгновенно из кэша; <b class="hl">нулевая стоимость</b> — модель локальная, без платных API</li>
+    <li>читалка комиксов: пачечная загрузка, перетаскивание порядка, зум 1–3× (пинч и двойное касание), лента/постранично</li>
+    <li>редактор автора на Tiptap с импортом .docx/.md/.txt, иллюстрациями и своими шрифтами</li>
+    <li><b class="hl">33 автотеста</b> (vitest), production-сборка, Docker Compose + PostgreSQL, бэкапы</li>
+    <li>проверено: 18/18 страниц без ошибок, 50 одновременных запросов за 624 мс</li>
+  </ul>
+  <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Ollama</span><span class="tag">LLM</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">vitest</span></div>
+  <div class="shots">
+    <img src="screenshots/01-home.png" alt="Главная">
+    <img src="screenshots/04-reader.png" alt="Читалка с переводом">
+    <img src="screenshots/05-comic.png" alt="Читалка комиксов">
+    <img src="screenshots/06-editor.png" alt="Редактор автора">
+  </div>
+</section>
+
+<section class="project">
+  <h3>Yurei Night — сайт мероприятий</h3>
+  <div class="meta">Next.js · Express · Cloudflare · 2026 · работает на живых мероприятиях, 500+ участников</div>
+  <ul>
+    <li>секции фестиваля, регистрация участников, QR-чекин, админ-панель</li>
+    <li>оптимизация фонового видео: мобильная версия 273 КБ вместо 484 КБ (H.264 Baseline + faststart) через <code>&lt;source media&gt;</code> — убрал подвисания на телефонах</li>
+    <li>домен и HTTPS через Cloudflare Tunnel, смена языка без разлогина, выгрузка планировок</li>
+  </ul>
+  <div class="tags"><span class="tag">Next.js</span><span class="tag">Cloudflare</span><span class="tag">рендеринг</span><span class="tag">оптимизация медиа</span></div>
+</section>
+
+<section class="project">
+  <h3>ERP-система — бэкенд и ИИ-функции</h3>
+  <div class="meta">Rust/axum · PostgreSQL · 2026 · разработка, подготовка к гранту</div>
+  <ul>
+    <li>107 таблиц, 51 миграция, мульти-тенантность с изоляцией данных по организациям</li>
+    <li>модули: счета, склад, канбан с бюджетом, воронка сделок с историей этапов, лиды с UTM, рассылки, отчётность CPL/ROMI, зарплата бруто/нето</li>
+    <li>каталог специалистов, матрица прав по ролям, приглашения сотрудников</li>
+    <li>аудит готовности: 178 маршрутов API, 0 ошибок 500</li>
+  </ul>
+  <div class="tags"><span class="tag">Rust</span><span class="tag">axum</span><span class="tag">PostgreSQL</span><span class="tag">мульти-тенантность</span></div>
+</section>
+
+<section class="project">
+  <h3>Kovanex — платформа деплоя PWA</h3>
+  <div class="meta">Go · SurrealDB · gRPC · Docker · Git SSH · 2026</div>
+  <ul>
+    <li>администрирование платформы, схема данных и запросы в SurrealDB, резервное копирование</li>
+    <li>gRPC API и git SSH с TLS; решил проблему захардкоженного адреса через iptables NAT + CA-сертификат</li>
+  </ul>
+  <div class="tags"><span class="tag">Go</span><span class="tag">gRPC</span><span class="tag">SurrealDB</span><span class="tag">Docker</span></div>
+</section>
+
+<h2>Стек</h2>
+<div class="grid">
+  <div class="box"><b>AI / LLM</b><span>локальные модели (Ollama, qwen2.5), промпт-инжиниринг, глоссарии и кэш, MCP-инструменты, агентные сценарии, контроль стоимости инференса</span></div>
+  <div class="box"><b>Backend</b><span>Rust (axum, sqlx), Node.js, Go; PostgreSQL, SQLite, SurrealDB; миграции, мульти-тенантность, права по ролям</span></div>
+  <div class="box"><b>Data</b><span>Python (pandas), Airflow, ClickHouse, SQL, Superset, Google Sheets API</span></div>
+  <div class="box"><b>Frontend</b><span>Next.js, React, TypeScript, Tailwind, Tiptap</span></div>
+  <div class="box"><b>DevOps</b><span>Linux, systemd, Docker/Compose, Nginx, Cloudflare Tunnel, DNS, TLS, iptables, Prometheus, бэкапы</span></div>
+  <div class="box"><b>Интеграции</b><span>Stripe, Discord API, SEF/eFaktura, Resend, Ollama</span></div>
+</div>
+
+<footer>
+  Даниил · AI Engineer · Белград · pacanzu@gmail.com · @Marquis_Andras<br>
+  Код и детали проектов — по запросу.
+</footer>
+</div>
+</body>
+</html>
